@@ -2,6 +2,9 @@ const express = require('express')
 const dotenv = require('dotenv')
 const collors = require('colors')
 
+//dependencia a la conexion de la db
+const connectDB = require('./config/db')
+
 //dependencias a las rutas 
 const bootcampRoutes = require('./routes/BootcampRoutes')
 
@@ -14,6 +17,12 @@ dotenv.config({
 
 //1.Crear el Objeto app 
 const app =express()
+
+//ejecutar la conexion a la db
+connectDB()
+
+app.use('/api/v1/bootcamps', bootcampRoutes)
+app.use('/api/v1/users' , UserRoutes )
 
 //usar archivo de routeo
 app.use('/api/v1/bootcamps' , bootcampRoutes)
