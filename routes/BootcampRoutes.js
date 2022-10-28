@@ -22,7 +22,7 @@ router.post('/',(req , res)=>{
 })
 
 //PUT- PATCH actualizar
-app.put('/:id', (req , res)=>{
+router.put('/:id', (req , res)=>{
     res.status(200).json(
         {
             "message": `aqui se va a actualizar el bootcamp` 
@@ -32,7 +32,7 @@ app.put('/:id', (req , res)=>{
 })
 
 //DELETE : borrar un bootcamp
-app.delete('/:id', (req , res)=>{
+router.delete('/:id', (req , res)=>{
     res.status(200).json(
         {
             "message" : `aqui se va a eliminar:${req.params.id}`
