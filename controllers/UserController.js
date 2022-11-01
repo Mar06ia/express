@@ -1,4 +1,4 @@
-
+ 
 //objeto de conexion
 const sequelize =require('../config/seq')
 //DataTypes
@@ -12,7 +12,7 @@ const User = UserModel(sequelize,DataTypes)
 
 
 //Traer por Id
-exports.getTraerUserPorId = async (req,res) =>{
+exports.TraerUserPorId = async (req,res) =>{
     const userId = await user.findBykpk(req.params.id)
     res.status(200).json(
         {
@@ -60,11 +60,21 @@ exports.ActualizarUser = async(req, res)=>{
 
 
 
-exports.EliminarUser = (req,res) =>{
+exports.EliminarUser = async (req,res) =>{
+    //buscar al usuario
+    const u = await User.findByPk(req.params.id)
+
+    // Eliminar usuario por id
+    await User.destroy({
+        where: {
+        id: req.params.id
+        }
+    });
+    //reponse
     res.status(200).json(
         {
-            "message": `aqui se va a borrar este usuario ${req.params.id}`,
-
+            "succes": true,
+            "data": u
         }
     )
 }

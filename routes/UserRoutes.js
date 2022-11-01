@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const {CrearUser,TraerUserPorId,actualizarUser,EliminarUser,traerUsers} = require('../controllers/UserController')
+const {crearUser,TraerUserPorId,ActualizarUser,EliminarUser} = require('../controllers/UserController')
 
 // //rutas de Usuario
 router.route('/')
-    .post(CrearUser)
+    .post(crearUser)
 
  router.route('/:id')
     .get(TraerUserPorId)
-    .put(actualizarUser)
+    .put(ActualizarUser)
     .delete(EliminarUser)
 
 

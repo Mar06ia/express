@@ -41,9 +41,5 @@ router.delete('/:id', (req , res)=>{
 
 })
 
-
-
-
-
 //exportar rutas
 module.exports = router
