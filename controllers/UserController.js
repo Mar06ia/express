@@ -36,7 +36,7 @@ exports.crearUser = async(req,res) =>{
 }
 
 
-//Actualizar User: Put
+//Actualizar User: Put:Pach
 exports.ActualizarUser = async(req, res)=>{
     //actualizar usuario  por Id
     await User.update(req.body,{
@@ -48,18 +48,13 @@ exports.ActualizarUser = async(req, res)=>{
     //consultar datos actualizados
     const upUser = await User.findByPk(req.params.id)
 
-    res.status(200).json({
-        "succes" :true,
-        "data" :upUser
-    }
-
-    )
+        res.status(200).json({
+            "succes" :true,
+            "data" :upUser
+        })
 }
      
-
-
-
-
+//Eliminar User
 exports.EliminarUser = async (req,res) =>{
     //buscar al usuario
     const u = await User.findByPk(req.params.id)
