@@ -9,6 +9,7 @@ const connectDB = require('./config/db')
 //dependencias a las rutas 
 const bootcampRoutes = require('./routes/BootcampRoutes')
 const userRoutes = require('./routes/UserRoutes')
+const listEndpoints = require('express-list-endpoints')
 
 //establecer el archivo de configuracion
 //con variables de entorno del proyecto
@@ -27,6 +28,7 @@ connectDB()
 app.use('/api/v1/bootcamps', bootcampRoutes)
 app.use('/api/v1/users' , userRoutes )
 
+console.log(listEndpoints(app));
 
 //3.metodo listen:ejecutar servidor
 app.listen( process.env.PORT , ()=>{

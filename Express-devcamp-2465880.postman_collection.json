@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2f01d8cb-5347-46f3-b3a3-3ea136defd1c",
+		"_postman_id": "26c21044-4bb9-4286-a63e-32a4621af143",
 		"name": "Express-devcamp-2465880",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -231,7 +231,10 @@
 					"name": "Eliminar user",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -241,7 +244,10 @@
 			"name": "PruebaBasic",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		}
