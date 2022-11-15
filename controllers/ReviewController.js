@@ -154,7 +154,7 @@ exports.EliminarReseña= async (req,res) =>{
                 {
                     "succes": false,
                     "errors": [
-                        "reseñas no existe"
+                        "review no existe"
                     ]
                 }
             )

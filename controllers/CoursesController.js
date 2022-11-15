@@ -11,7 +11,7 @@ const Course = CoursesModel(sequelize,DataTypes)
 
 exports.TraerCursos = async (req,res) => {
     try {
-        const courses = await User.findAll();
+        const courses = await Course.findAll();
         res.status(200).json(
             {
                 "response": true,

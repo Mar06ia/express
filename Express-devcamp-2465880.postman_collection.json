@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "2e138871-dfbb-4bf7-b673-bd4858847648",
+		"_postman_id": "30150a0a-6cdb-4b0e-8707-8637d4b4f372",
 		"name": "Express-devcamp-2465880",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23922311"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -232,7 +231,10 @@
 					"name": "Traer bootcamp id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -245,7 +247,10 @@
 					"name": "Crear nuevo review",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -253,7 +258,10 @@
 					"name": "Actualizar review",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -261,7 +269,10 @@
 					"name": "Traer review id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -269,7 +280,10 @@
 					"name": "Traer todos los reviews",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -277,7 +291,10 @@
 					"name": "Eliminar review",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -290,7 +307,10 @@
 					"name": "crear nuevo courses",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -298,7 +318,10 @@
 					"name": "traer courses id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -306,19 +329,33 @@
 					"name": "eliminar courses",
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "traer Courses",
+					"request": {
+						"method": "GET",
 						"header": []
 					},
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "actualizar courses",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
 		},
 		{
 			"name": "PruebaBasic",
