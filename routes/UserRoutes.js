@@ -12,5 +12,5 @@ router.route('/')
     .put(ActualizarUser)
     .delete(EliminarUser)
 
-
 module.exports = router
+

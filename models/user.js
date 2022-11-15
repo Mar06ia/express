@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       } 
 
-
     },
     email: { 
       type: DataTypes.STRING,
@@ -56,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'Email  debe ser valido'
         }
-    },
+      },
 
     },
     password: {

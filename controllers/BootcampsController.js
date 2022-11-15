@@ -4,18 +4,18 @@ const sequelize =require('../config/seq')
 //DataTypes
 const {DataTypes,ValidationError} =require('sequelize')
 //El modelo
-const UserModel = require('../models/user')
-const user = require('../models/user')
+const BootcampModel = require('../models/bootcamp')
+const bootcamp = require('../models/bootcamp')
 //Crear el objeto usuario
-const User = UserModel(sequelize,DataTypes)
+const Bootcamp = BootcampModel(sequelize,DataTypes)
 
-exports.TraerUsuarios = async (req,res) => {
+exports.TraerBootcamps = async (req,res) => {
     try {
-        const users = await User.findAll();
+        const bootcamps = await Bootcamp.findAll();
         res.status(200).json(
             {
                 "response": true,
-                "data" :  users
+                "data" :  bootcamps
             }
         )    
     } catch (error) {
@@ -30,30 +30,24 @@ exports.TraerUsuarios = async (req,res) => {
 
 //Traer por Id
 //FUNCIONALES
-exports.TraerUserPorId = async (req,res) =>{
+exports.TraerBootcampPorId = async (req,res) =>{
     try {
-        const userId = await User.findByPk(req.params.id)
+        const bootcampId = await Bootcamp.findByPk(req.params.id)
         //si usuario no existe
-        if(!userId){
+        if(!bootcampId){
             res.status(422).json(
                 {
                     "succes": false,
                     "errors": [
-                        "usuario no existe"
+                        "bootcamp no existe"
                     ]
                 }
             )
         }else{           
-          //  await User.findOne(req.body,{
-         //   where:{
-            //    id: req.params.id
-         //   }
-    //    });
-       // const userById = await User.findByPk(req.params.id)
-       return res.status(200).json(
+            return res.status(200).json(
                 {
                     "succes": true,
-                    "data" : userId
+                    "data" : bootcampId
                 }
             )
         }
@@ -70,14 +64,14 @@ exports.TraerUserPorId = async (req,res) =>{
 
 
 //Agregar datos con Post //validación
-exports.crearUser = async(req,res) =>{
+exports.crearBootcamp = async(req,res) =>{
     try {
-        const newUser = await User.create(req.body);
+        const newBootcamp = await Bootcamp.create(req.body);
 
         res.status(201).json(
             {
                 "success" : true,
-                "data" : newUser    
+                "data" : newBootcamp  
             }
         )
     } catch (error) {
@@ -106,34 +100,36 @@ exports.crearUser = async(req,res) =>{
 
 
 //Actualizar User: Put:Pach
-exports.ActualizarUser = async(req, res)=>{
+exports.ActualizarBootcamp = async(req, res)=>{
     try {
         //consultar datos actualizados
-        const upUser = await User.findByPk(req.params.id)
-        if(!upUser){
+        const upBootcamp = await Bootcamp.findByPk(req.params.id)
+        if(!upBootcamp){
             //response de usuario no encontrado
             res.status(422).json(
                 {
                     "succes": false,
                     "errors": [
-                        "usuario no existe"
+                        "bootcamp no existe"
                     ]
                 }
             )
         }else{
+            console.log(req.params.id)
+            console.log(req.body)
             //actualizar usuario  por Id
-            await User.update(req.body,{
+            await Bootcamp.update(req.body,{
                 where:{
                     id: req.params.id
                 }
             });
             //seleccionar usuario actualizado
             //consultar datos actualizados
-            const userAct = await User.findByPk(req.params.id)
+            const bootcampAct = await Bootcamp.findByPk(req.params.id)
             //enviar response con usuario actualizado
             res.status(200).json({
                 "succes" :true,
-                "data" : userAct
+                "data" : bootcampAct
             }) 
 
         }
@@ -148,23 +144,23 @@ exports.ActualizarUser = async(req, res)=>{
 }
      
 //Eliminar User
-exports.EliminarUser = async (req,res) =>{
+exports.EliminarBootcamp = async (req,res) =>{
     //buscar al usuario
     try {
-        const deleteUser = await User.findByPk(req.params.id)
-        if(!deleteUser){
+        const deleteBootcamp = await Bootcamp.findByPk(req.params.id)
+        if(!deleteBootcamp){
             //response de usuario no encontrado
             res.status(422).json(
                 {
                     "succes": false,
                     "errors": [
-                        "usuario no existe"
+                        "bootcamp no existe"
                     ]
                 }
             )
         }else{
             // Eliminar usuario por id
-            await User.destroy({
+            await Bootcamp.destroy({
                 where: {
                 id: req.params.id
                 }
@@ -173,7 +169,7 @@ exports.EliminarUser = async (req,res) =>{
             res.status(200).json(
                 {
                     "succes": true,
-                    "data": deleteUser
+                    "data": deleteBootcamp
                 }
             )
         }

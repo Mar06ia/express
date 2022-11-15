@@ -32,7 +32,7 @@ exports.TraerReseñas = async (req,res) => {
 //FUNCIONALES
 exports.TraerReseñaPorId = async (req,res) =>{
     try {
-        const reviewId = await review.findBykpk(req.params.id)
+        const reviewId = await Review.findByPk(req.params.id)
         //si usuario no existe
         if(!reviewId){
             res.status(422).json(
@@ -67,7 +67,7 @@ exports.TraerReseñaPorId = async (req,res) =>{
 exports.crearReseña = async(req,res) =>{
     try {
         const newReview = await Review.create(req.body);
-
+console.log(newReview);
         res.status(201).json(
             {
                 "success" : true,
@@ -100,7 +100,7 @@ exports.crearReseña = async(req,res) =>{
 
 
 //Actualizar User: Put:Pach
-exports.ActualizarReseña = async(req, res)=>{
+exports.ActualizarResena = async(req, res)=>{
     try {
         //consultar datos actualizados
         const upReview = await Review.findByPk(req.params.id)
@@ -115,6 +115,8 @@ exports.ActualizarReseña = async(req, res)=>{
                 }
             )
         }else{
+            console.log(req.body)
+            console.log(req.params.id)
             //actualizar usuario  por Id
             await Review.update(req.body,{
                 where:{
@@ -123,11 +125,11 @@ exports.ActualizarReseña = async(req, res)=>{
             });
             //seleccionar usuario actualizado
             //consultar datos actualizados
-            const userAct = await User.findByPk(req.params.id)
+            const reviewAct = await Review.findByPk(req.params.id)
             //enviar response con usuario actualizado
             res.status(200).json({
                 "succes" :true,
-                "data" : userAct
+                "data" : reviewAct
             }) 
 
         }

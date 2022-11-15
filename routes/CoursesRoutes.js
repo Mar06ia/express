@@ -4,13 +4,13 @@ const{TraerCursos,TraerCursosPorId,crearCursos,ActualizarCursos,EliminarCursos} 
 
 //ruta de Courses
 router.route('/')
-    .post(crearCursos)
-    .get(TraerCursos)
+     .post(crearCursos)
+     .get(TraerCursos)
 
 router.route('/:id')
-    .get(TraerCursosPorId)
-    .put(ActualizarCursos)
-    .delete(EliminarCursos)
+     .get(TraerCursosPorId)
+     .put(ActualizarCursos)
+     .delete(EliminarCursos)
 
 
-module . exports = router
+module.exports = router

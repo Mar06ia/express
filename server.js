@@ -11,7 +11,6 @@ const bootcampRoutes = require('./routes/BootcampRoutes')
 const userRoutes = require('./routes/UserRoutes')
 const reviewRoutes = require ('./routes/ReviewRoutes')
 const coursesRoutes = require('./routes/CoursesRoutes')
-const listEndpoints = require('express-list-endpoints')
 
 //establecer el archivo de configuracion
 //con variables de entorno del proyecto
@@ -29,10 +28,10 @@ connectDB()
 
 app.use('/api/v1/bootcamps', bootcampRoutes)
 app.use('/api/v1/users' , userRoutes )
-app.use('/api/v1/reviews',reviewRoutes)
+app.use('/api/v1/reviews', reviewRoutes)
 app.use('/api/v1/courses', coursesRoutes)
 
-console.log(listEndpoints(app));
+console.log(listEndPoints(app));
 
 //3.metodo listen:ejecutar servidor
 app.listen( process.env.PORT , ()=>{

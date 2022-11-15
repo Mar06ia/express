@@ -32,7 +32,7 @@ exports.TraerCursos = async (req,res) => {
 //FUNCIONALES
 exports.TraerCursosPorId = async (req,res) =>{
     try {
-        const coursesId = await course.findBykpk(req.params.id)
+        const coursesId = await Course.findByPk(req.params.id)
         //si usuario no existe
         if(!coursesId){
             res.status(422).json(
@@ -123,15 +123,16 @@ exports.ActualizarCursos = async(req, res)=>{
             });
             //seleccionar usuario actualizado
             //consultar datos actualizados
-            const userAct = await User.findByPk(req.params.id)
+            const coursesAct = await Course.findByPk(req.params.id)
             //enviar response con usuario actualizado
             res.status(200).json({
                 "succes" :true,
-                "data" : userAct
+                "data" : coursesAct
             }) 
 
         }
     } catch (error) {
+        console.log(error)
         res
             .status(500)
             .json({
